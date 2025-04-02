@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Inventory Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="logo-container">
+                <h1>Inventory Management</h1>
+                <p>Efficient. Smart. Sustainable.</p>
+            </div>
+            
+            <div class="form-box">
+                <h2>Create Account</h2>
+                <p>Join our inventory management system</p>
+                
+                {% if error %}
+                <div class="error-message">
+                    <i class="fas fa-exclamation-circle"></i> {{ error }}
+                </div>
+                {% endif %}
+                
+                <form action="{{ url_for('register') }}" method="POST">
+                    <div class="input-group">
+                        <label for="name">Full Name</label>
+                        <div class="input-field">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        </div>
+                    </div>
+                
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <div class="input-field">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <div class="input-field">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" name="password" placeholder="Create a password" required minlength="6">
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <div class="input-field">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required minlength="6">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-login">Create Account</button>
+                    
+                    <div class="register-link">
+                        Already have an account? <a href="{{ url_for('login') }}">Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="image-container">
+            <div class="overlay">
+                <h2>Inventory Management System</h2>
+                <p>Track inventory, monitor loads, and reduce waste with real-time updates</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+</body>
+</html>

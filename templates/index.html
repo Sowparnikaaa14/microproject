@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="landing-container">
+        <div class="landing-content">
+            <div class="landing-logo">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+            </div>
+            <h1>Inventory Management System</h1>
+            <p>Track inventory, monitor loads, and receive alerts in real-time.</p>
+            <div class="landing-buttons">
+                <a href="{{ url_for('login') }}" class="btn primary-btn">Login</a>
+                <a href="{{ url_for('register') }}" class="btn secondary-btn">Register</a>
+            </div>
+            <div class="landing-features">
+                <div class="feature">
+                    <i class="fas fa-boxes"></i>
+                    <h3>Real-time Inventory</h3>
+                    <p>Track your inventory with live updates</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-truck"></i>
+                    <h3>Load Tracking</h3>
+                    <p>Monitor transportation of goods</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-bell"></i>
+                    <h3>Smart Alerts</h3>
+                    <p>Get notified for low stock and expiry</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
